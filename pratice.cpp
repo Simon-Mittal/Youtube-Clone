@@ -1,61 +1,235 @@
-#include<iostream>
-using namespace std;
-int main()
-{
-    int x,y,k=0;
-    cout<<"Enter lower and upper range : ";
-    cin>>x>>y;
-    int a[y-x+1];
-    int p[y-x+1];
-    int num[10];
-    for (int i=0; i<10; i++)
-    {
-        num[i]=0;
-    }
-    for (int i=0; i<y-x+1; i++)
-        {
-            a[i]=x+i;
-            int temp=a[i],c=0;
-            for (int j=2; j<=temp/2; j++)
-            {
-                if (temp%j==0)
-                    c++;
-            }
-            if (c==0 && (x+i)!=1)
-            {
-                p[k]=a[i];
-                k++;
-            }
-        }
-    if (k==0)
-    {
-        printf("-1");
-        return 0;
-    }
-    for (int i=0; i<k; i++)
-        {
-            while(p[i]!=0)
-            {
-                int n=p[i]%10;
-                p[i]/=10;
-                for (int j=0; j<10; j++)
-                {
-                    if (n==j)
-                        num[j]++;
-                }    
-            }
-        }
-    int max=0,o;
-    for (int i=0; i<10; i++)
-    {
-        if (num[i]>=max)
-            {
-                max=num[i];
-                o=i;
-            }
-    }
-    printf("max frequency is of %d of %d times",o,max);    
-}
+// #include<iostream>
+// #include<cmath>
+// #include<cstdlib>
+// #include<ctime>
+// using namespace std;
+// int countr=0,countw=0;
+// void incorrect(int m)
+// {
+//   switch(m)
+//   {
+//     case 1:
+//       cout<<"No. Please try again."<<endl;
+//       break;
+//     case 2:
+//       cout<<"Wrong. Try once more."<<endl;
+//       break;
+//     case 3:
+//       cout<<"Don't give up!"<<endl;
+//       break;
+//     case 4:
+//       cout<<"No. Keep trying."<<endl;
+//       break;
+//   }
+// }
+// void correct(int m)
+// {
+//   switch(m)
+//   {
+//     case 1:
+//       cout<<"Very good!"<<endl;
+//       break;
+//     case 2:
+//       cout<<"Excellent!"<<endl;
+//       break;
+//     case 3:
+//       cout<<"Nice work!"<<endl;
+//       break;
+//     case 4:
+//       cout<<"Keep up the good work!"<<endl;
+//       break;
+//   }
+// }
+// void ques(int dif)
+// {
+//   int mod=pow(10,dif)-1,flag=2;
+//   int n1=rand()%mod+1;
+//   int n2=rand()%mod+1;
+//   label:
+//   cout<<"How much is "<<n1<<" times "<<n2<<"?"<<endl;
+//   int ans;
+//   cin>>ans;
+//   if(n1*n2==ans){
+//     if(flag==2)
+//     flag=1;
+//     int m=rand()%4+1;
+//     correct(m);
+//   }
+//   else{
+//     flag=0;
+//     int m=rand()%4+1;
+//     incorrect(m);
+//     goto label;
+//   }
+//   if(flag)
+//   countr++;
+//   else
+//   countw++;
+// }
+// int main()
+// {
+//   string re;
+//   do
+//   {
+//   int dif;
+//   cout<<"Enter difficulty level: (1 for single digit and so on): ";
+//   cin>>dif;
+//   srand(time(NULL));
+//   while(countr+countw<10)
+//     ques(dif);
+//   if(countr*10<75)
+//   cout<<"Please ask your teacher for extra help."<<endl;
+//   else
+//   cout<<"Congratulations, you are ready to go to the next level!"<<endl;
+//   cout<<"\nType 'Yes' to restart & 'No' to terminate\n";
+//   cin>>re; 
+//   }
+//   while(re!="No");
+//   return 0;
+// }
+
+
+// #include<iostream>
+// #include<cmath>
+// #include<cstdlib>
+// #include<ctime>
+// using namespace std;
+// int countr=0,countw=0;
+// void correct(){
+//   srand(time(NULL));
+//   int c=rand()%4;
+//   switch(c){
+//    case 0:{
+//    cout<<"Very good!"<<endl;
+//    break;}
+//    case 1:{
+//    cout<<"Excellent!"<<endl;
+//    break;}
+//    case 2:{
+//    cout<<"Nice work!"<<endl;
+//    break;}
+//    case 3:{
+//     cout<<"Keep up the good work!"<<endl;
+//    }
+//   }
+//  }
+//  void incorrect(){
+//    srand(time(NULL));
+//    int c=rand()%4;
+//    switch(c){
+//     case 0:{
+//     cout<<"No. Please try again."<<endl;
+//     break;}
+//     case 1:{
+//     cout<<"Wrong. Try once more."<<endl;
+//     break;}
+//     case 2:{
+//     cout<<"Don't give up!"<<endl;
+//     break;}
+//     case 3:{
+//       cout<<"No. Keep trying."<<endl;
+//     }
+//    }
+//  }
+// void ques(int dif)
+// {
+//   int mod=pow(10,dif),flag=2;
+//   srand(time(NULL));
+//   int n1=rand()%mod;
+//   int n2=rand()%mod;
+//   label:
+//   cout<<"How much is "<<n1<<" times "<<n2<<"?"<<endl;
+//   int ans;
+//   cin>>ans;
+//   if(n1*n2==ans){
+//     if(flag==2)
+//     flag=1;
+//     correct();
+//   }
+//   else{
+//     flag=0;
+//     incorrect();
+//     goto label;
+//   }
+//   if(flag)
+//   countr++;
+//   else
+//   countw++;
+// }
+// int main()
+// {
+//   int dif;
+//   cout<<"Enter difficulty level: (1 for single digit and so on): ";
+//   cin>>dif;
+//   while(countr+countw<10)
+//     ques(dif);
+//   if(countr*10<75)
+//   cout<<"Please ask your teacher for extra help."<<endl;
+//   else
+//   cout<<"Congratulations, you are ready to go to the next level!"<<endl;
+//   return 0;
+// }
+
+
+
+// #include<iostream>
+// using namespace std;
+// int main()
+// {
+//     int x,y,k=0;
+//     cout<<"Enter lower and upper range : ";
+//     cin>>x>>y;
+//     int a[y-x+1];
+//     int p[y-x+1];
+//     int num[10];
+//     for (int i=0; i<10; i++)
+//     {
+//         num[i]=0;
+//     }
+//     for (int i=0; i<y-x+1; i++)
+//         {
+//             a[i]=x+i;
+//             int temp=a[i],c=0;
+//             for (int j=2; j<=temp/2; j++)
+//             {
+//                 if (temp%j==0)
+//                     c++;
+//             }
+//             if (c==0 && (x+i)!=1)
+//             {
+//                 p[k]=a[i];
+//                 k++;
+//             }
+//         }
+//     if (k==0)
+//     {
+//         printf("-1");
+//         return 0;
+//     }
+//     for (int i=0; i<k; i++)
+//         {
+//             while(p[i]!=0)
+//             {
+//                 int n=p[i]%10;
+//                 p[i]/=10;
+//                 for (int j=0; j<10; j++)
+//                 {
+//                     if (n==j)
+//                         num[j]++;
+//                 }
+//             }
+//         }
+//     int max=0,o;
+//     for (int i=0; i<10; i++)
+//     {
+//         if (num[i]>=max)
+//             {
+//                 max=num[i];
+//                 o=i;
+//             }
+//     }
+//     printf("max frequency is of %d of %d times",o,max);
+// }
 
 
 
@@ -136,7 +310,7 @@ int main()
 //         cout<<"Highest frequency element is "<<e;
 //     else
 //         cout<<"-1";
-//     return 0;    
+//     return 0;
 // }
 
 // #include<iostream>
@@ -206,7 +380,7 @@ int main()
 // char* p = input_line;
 // int i = 0;
 // while (i < max_length) {
-//     if (*(p + i) == '?') 
+//     if (*(p + i) == '?')
 //         quest_count++;
 //     i++;
 // }

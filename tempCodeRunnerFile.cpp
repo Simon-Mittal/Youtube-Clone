@@ -1,20 +1,10 @@
-#include<iostream>
-using namespace std;
-int main()
-{
-    int n,i,j,k;
-    cin>>n;
-    int a[n];
-    for (i=0; i<n; i++)
-        cin>>a[i];
-    for (i=0; i<n; i++)
-    {
-        for (j=i; j<n; j++)
-        {
-            for (k=i; k<=j; k++)
-                cout<<a[k]<<" ";
-            cout<<"\n";
-        }
-    }
-    return 0;
-}
+hello(int a)
+  //   {
+  //     x=a;
+  //     cout<<"Pam pam\n";
+  //   }
+  //   hello (const hello & ob)
+  //   {
+  //       cout<<"Copy"<<endl;
+  //   }
+  // };

@@ -1,3 +1,43 @@
+
+
+
+
+
+
+// #include<stdio.h>
+// #include<limits.h>
+// int main()
+// {
+//     int n,min=INT_MAX,max;
+//     scanf("%d",&n);
+//     int a[n];
+//     for (int i=0; i<n; i++)
+//     {
+//         scanf("%d",&a[i]);
+//     }
+//     for (int i=0; i<n; i++)
+//     {
+//         if (a[i]<min)
+//         {
+//             min=a[i];
+//             max=INT_MIN;
+//             for(int j=i; j<n; j++)
+//             {
+//                 if (a[j]>max)
+//                     max=a[j];
+//             }
+//         }
+//     }
+//     if(max==INT_MIN)
+//     printf("No");
+//     else
+//     {printf("Profit:%d\n",max-min);
+//     printf("Buy at : %d\n",min);
+//     printf("Sell at : %d\n",max);}
+//     return 0;
+// }
+
+
 // #include<stdio.h>
 // int main()
 // {
@@ -25,8 +65,6 @@
 //     printf("%d\t",p[i]);
 //     return 0;
 // }
-
-
 
 // //armstrong no.
 // #include<stdio.h>
