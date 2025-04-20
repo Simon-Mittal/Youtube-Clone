@@ -20,7 +20,8 @@
     font-weight: 500;
     font-size: 14px;
     margin-top: 0;
-
+    line-height: 20px;
+    margin-bottom: 10px;
   }
 
   .t{
@@ -28,11 +29,11 @@
     width: 200px;
   }
   .misrect{
-    width: 37px;
+    width: 36px;
     border-radius: 50px;
   }
   .imi{
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     position: relative;
   }
   .grid{
