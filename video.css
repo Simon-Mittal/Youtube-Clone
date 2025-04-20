@@ -1,0 +1,56 @@
+
+  .video-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 40px;
+
+  }
+  .img{
+    width:100%;
+  }
+  .hi{
+    font-family: Roboto,Arial;
+    color:rgb(96, 96, 96);
+    font-size: 12px;
+
+  }
+  .text{
+    font-family: Roboto,Arial;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 0;
+
+  }
+
+  .t{
+    display: inline-block;
+    width: 200px;
+  }
+  .misrect{
+    width: 37px;
+    border-radius: 50px;
+  }
+  .imi{
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+  }
+  .video-time{
+    font-family: Roboto, Arial;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 8px;
+    right: 5px;
+  }
