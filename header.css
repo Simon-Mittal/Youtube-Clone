@@ -52,9 +52,33 @@
   margin-left: -1px;
   margin-right: 10px;
 }
-.search{
-  height:25px;
-  margin-top: 4px;
+.search-button, .voice-search-button, .upload-icon-container, .youtube-container, .noti-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor : pointer;
+}
+.search-button .tooltip, .voice-search-button .tooltip, .upload-icon-container .tooltip, .youtube-container .tooltip, .noti-container .tooltip{
+  font-family: Roboto, Arial;
+  position: absolute;
+  background: gray;
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 2px;
+  font-size: 12px;
+  bottom: -30px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.search-button:hover .tooltip, .voice-search-button:hover .tooltip, .upload-icon-container:hover .tooltip, .youtube-container:hover .tooltip, .noti-container:hover .tooltip{
+
+  opacity: 1;
 }
 .voice{
   height: 20px;
@@ -86,7 +110,6 @@
 }
 .voice{
   height: 24px;
-  margin-top: 4px;
 }
 
 .upload{
@@ -121,4 +144,8 @@
 .my-channel{
   height: 32px;
   border-radius: 16px;
+  cursor: pointer;
+}
+.search{
+  height: 25px;
 }
